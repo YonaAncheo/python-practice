@@ -1,0 +1,95 @@
+First problem. Student Management System
+Goal: Register and list students with ID, name, and grades
+Presentation: Console app to input student info and show results
+BLL: Validate student data, calculate average grade
+DAL: Save/load student info in memory (or file)
+
+1. Understand the problem first.
+  What is the inputs? -> idStudent, nameStudent, gradeStudent
+  What is the outputs? -> student instance, add student grades, student list.
+  What is the steps? -> Register: read -> create student instance -> add to student list.
+                        add student grades: read -> add grades -> show student information.
+                        list all students: read option -> read information -> show list.
+
+# 2. Write the steps in plain language.
+// Entity class Student
+## Class Student:
+  Atribute idStudent
+  Atribute nameStudent
+  Atribute grade1Student
+  Atribute grade1Student
+  Atribute avarege
+  Constructor(idStudent, nameStudent, grade1Student,grade1Student)
+    Set attibutes
+    SetMedia()
+  Function SetAverage():
+    mediaStudent = (grade1 + grade2)/2
+// Data Access Layer (DAL) (StudentRepository) data storage/retrieval
+## Class StudentRepository:
+  Variable studentList = Empty list
+  Function AddStudent(student):
+    Add student to studentList.
+  Function GetStudent(id):
+    studentList[id].SetMedia()
+    Return studentList[id]
+  Function GetAll():
+    for each student in studentList:
+      student.SetMedia()
+    Return studentList
+  Function SetGrades(id, grade1, grade2):
+    studentList[id].setGrade1(grade1)
+    studentList[id].setGrade2(grade2)
+// Bussiness Logical Layer (BLL) (StudentService)
+## Class StudentService:
+  Variable student
+  Variable studentRepository
+  Constructor (studentRepository)
+    Set variable
+  Function AddStudent(id, name, grade1, grade2):
+    student = Student(id, name, grade1, grade2)
+    studentRepository.AddStudent(student)
+  Function ShowStudent(id):
+    Display studentRepository.GetStudent(id)
+  Function SetGrades(id, grade1, grade2):
+    studentRepository.SetGrades(id, grade1, grade2)
+  Function GetAll():
+    Display studentRepository.GetAll()
+    
+# Start:
+  variable option
+  variable studentRepository
+  variable studentService(studentRepository)
+  ## while (true)
+    Display "Welcome to Students Manager App/ choose an option/ 1. Show all Student and them grades/ 2. Add a Student /
+    3. Update grades / 4. exit the program"
+    input option
+    If option != 1, 2, 3 or 4, then pass
+    switch:
+      option 1:
+        Display studentService.GetAll()
+      option 2:
+        Display "Add a new Student/ Enter id:"
+        Input id
+        Display "Enter name:"
+        Input name
+        Display "Enter grade1:"
+        Input grade1
+        Display "Enter grade2:"
+        Input grade2
+        studentService.ShowStudent(id)
+      option 3:
+        Display "Enter id:"
+        Input id
+        Display "Enter grade1:"
+        Input grade1
+        Display "Enter grade2:"
+        Input grade2
+        studentService.SetGrades(id, grade1, grade2):
+        studentService.ShowStudent(id)
+      option 4:
+        Brake
+    Display "Press any key to return"
+      Input option
+      If option true then pass
+  Display "See you later"
+End
