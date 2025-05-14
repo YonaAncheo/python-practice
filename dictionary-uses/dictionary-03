@@ -1,0 +1,33 @@
+from typing import Dict
+numbers: dict = {1: 'uno', 2: 'dos', 3: 'tres'}
+print(numbers[3])
+
+information: list[dict] = [{
+  'name':'Carla',
+  'Age': 32,
+  'Fono': '987654321'
+},{
+  'name':'Yona',
+  'Age': 32,
+  'Fono': '988776621'
+}]
+# in this line I declare a dictionary of dictionarys
+contacts: Dict[str,Dict] = {'Joan':{'fone': '987654321','email': 'joan@example.com'},
+                  'Yona': { 'fone': '988776621', 'email': 'yona@example.com'}}
+
+print(information)
+print(information[1]['name'])
+print(contacts)
+print(type(contacts))
+print(contacts['Joan'])
+print(contacts['Yona']['fone'])
+
+contactsKeys: dict = contacts.keys()
+print(contactsKeys)
+print(type(contactsKeys))
+contactsItem: dict = contacts.items()
+print(contactsItem)
+print(type(contactsItem))
+# this line add a new contac to contacts dictionary
+contacts['francisco'] = { 'fone': 977664423, 'email': 'fran@example.com', 'other': 'something'}
+print( contacts)

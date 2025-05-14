@@ -1,0 +1,27 @@
+Challenge: create the logic for the game rock-paper-scisor.
+
+1. What is the input? -> the user choose (rock, paper or scisor)
+2. What is the outputs? -> win or loss
+3. How work this game? -> read input -> evaluates the cpu choose -> declare a winner
+
+Start:
+  while(true):
+    int counterWinPlayer = 0
+    str choosePlayer
+    str chooseCPU
+    Display 'Enter an option, rock, paper or scisor'
+    choosePlayer = input()
+    chooseCPU = ramdom['rock','paper','scisor']
+    if choosePlayer == chooseCPU
+      then Display 'Draw''
+      Brake
+    if (choosePlayer == 'rock' and chooseCPU == 'scisor') or ('scisor' and 'paper') or ('paper' and 'rock'):
+      then Display 'Player win'
+      counterWinPlayer +=
+      Brake
+    else:
+      isplay 'Player loss'
+      counterWinPlayer -=
+      Brake
+    
+  
