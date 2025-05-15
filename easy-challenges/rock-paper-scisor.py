@@ -1,4 +1,3 @@
-# logic for rock-paper-scisor game.
 import random
 
 class Game:
@@ -55,8 +54,3 @@ while(True):
   else:
     print('You lose this round')
   print(f'Score: {game.playerCount}')
-  
-
-  
-  
-  
