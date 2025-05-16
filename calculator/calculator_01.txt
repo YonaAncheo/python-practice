@@ -1,0 +1,48 @@
+creating a basic calculator for practice functions declaration.
+
+1. What is the input? an option for user and two values, a and b.
+2. What is the output? the result of operation sum, minus, mul and div.
+3. What is the route?? 
+while user want continue:
+-> Firt a welcome to the console aplication 
+-> user choose an option
+-> if option invalid then display exception and continue.
+-> if option is for exit, break for close the program.
+-> if valid option, user will enter two values.
+-> the program display the result
+-> start again.
+
+class Calculator:
+  float a
+  float b
+  
+  function initializer ()
+    a = 0
+    b = 0
+  
+  function float sum(float a,float b)
+    return a+b
+  
+  function float minus(float a, float b)
+    return a - b
+  
+  function float mult(float a, float b)
+    return a*b
+  
+  function float div(float a, float b)
+    if b==0: display 'error zero division' and continue
+    return a/b
+
+Start:
+  instace calc of Calculator
+  while(True):
+    Display 'Calculator \n Enter 1. sum, 2 minus, 3 mult, 4 div, 5 exit'
+    option = intput()
+    if option == 1: display 'Sum: a + b = ' + calc.sum(a,b)
+    else if option == 2: display 'minus: a - b = ' + calc.minus(a,b)
+    else if option == 3: display 'mult: a + b = ' + calc.mult(a,b)
+    else if option == 4: display 'div: a/b = ' + calc.div(a,b)
+    else if option == 5: display 'Closing app' and break
+    else: display 'Invalid option.'
+
+    
