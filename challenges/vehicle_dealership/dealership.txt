@@ -1,0 +1,100 @@
+Develop a vehicle dealership that can manage vehicle purchases and sales. 
+A user will be able to view available vehicles, their prices, and purchase one. 
+Apply the object-oriented programming concepts discussed in this exercise.
+
+1. What is the inputs? options, prices, custumer_account, custumer_collection, list_cutumer
+2. What is the output? different console UI (home, purchase, vehicle view), 
+  custumer add a car to his collection
+3. Skecth workflow outline
+
+Start:
+  while(True):
+    Display 'Welcome'
+    user need to sign in:
+      break
+    option = input('Enter an option, 1 Vehicle available, 2 Contact us, 3 show your vehicles, 4. Exit program')
+    If option out of [1,2,3,4] or not a number:
+      Display 'Invalid option, try again'
+      continue
+    else if option == 4:
+      Display 'closing program''
+      break
+    else if option == 1:
+      Display ('Vehicle available:')
+      for each vehicle in Dealership.vehicles:
+        Display vehicle.to_string()
+      integer option_2 = Input('Choose the vehicle you want:')
+      Display Dealership.vehicles[id=option_2].to_string()
+      while(true):
+        display 'user can try the car and purchase it'
+        integer option_3 = input('enter an option, 1 turn on the car, 2 turn on the radio, 3 bought it, 4 go to show room.')
+        caught exception for invalid option.
+        if option_3 == 4: 
+          Display 'go to show room'
+          break
+        if option_3 == 1: display Dealership.vehicles[id=option_2].on_engine()
+        else if option_3 ==2: Display Dealership.vehicles[id=option_2].on_radio()
+        else if option_3 == 3: Display user.purchase_car(Dealership.vehicles[id=option_2])
+    else if 2:
+      Display Dealership.information
+    else if 3:
+      Display user.my_vehicles
+      
+
+
+
+Classes: 
+Dealership
+  information = {Brand:'', direction: '', fone: '', email: '', seller; ''}
+  users: dict = {id:{user: '', pass:'', ...}}
+  vehicles: dict = {id:{ Brand: value_2, Model: value_3, Color: value_4, Price: value_5}}
+  
+  Constructor Dealership():
+    Takes values ​​from a JSON database for information, user and vehicles
+
+  
+User:
+  string user
+  string pass
+  string name
+  integer credit
+  string fone
+  integer id
+  dictionary my_vehicles = {id:{ Brand: value_2, Model: value_3, Color: value_4, Price: value_5}}
+
+  function purchase_car(Vehicle car):
+    if car.price > credit:
+      return 'You requiere more credit to get this car''
+    id += 1
+    vehicles[id] = car.to_string()
+    return 'You bought the car and now is on your collection'
+
+  function to_string():
+    return display his attributtes
+  
+
+Vehicle
+  string brand
+  string model
+  string color
+  integer price
+
+  function to_string():
+    Display 'Brand: {brand}, Model: {model}, Color: {coloe}, Price: {price}'
+
+  function on_engine():
+    Display 'Vehicle {model} is on'
+    return True
+  
+  function radio_on():
+    if not on_engine():
+      Display 'Vehicle {model} is off'
+      return False
+    Display 'Radio on, you can listen music now''
+    return True
+  
+
+Program:
+  int option
+  function home_page()
+  funtcion
