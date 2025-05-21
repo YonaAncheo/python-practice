@@ -10,7 +10,7 @@ Apply the object-oriented programming concepts discussed in this exercise.
 Start:
   while(True):
     Display 'Welcome'
-    user need to sign in:
+    user need to sign up:
       break
     option = input('Enter an option, 1 Vehicle available, 2 Contact us, 3 show your vehicles, 4. Exit program')
     If option out of [1,2,3,4] or not a number:

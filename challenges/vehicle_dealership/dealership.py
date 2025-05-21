@@ -43,13 +43,35 @@ class User:
 
 class Dealership:
   def __init__(self) -> None:
+    self._vehicles_avaibles: dict = {}
+    self.add_vehicles()
+    self._custumers: dict = {}
+    self.add_custumers()
     pass
 
   def  view_vehicle():
     pass
   pass
+
+  def add_vehicles(self) -> bool:
+    car_1: Vehicle = Vehicle('Renault', 'Symbol','Plate', 900)
+    car_2: Vehicle = Vehicle('Toyota', 'Yaris','White', 1000)
+    car_3: Vehicle = Vehicle('Suzuki', 'Swift','Blue', 850)
+    self._vehicles_avaibles['car_1'] = car_1.to_dict()
+    self._vehicles_avaibles['car_2'] = car_2.to_dict()
+    self._vehicles_avaibles['car_3'] = car_3.to_dict()
+    return True
+  
+  def add_custumers(self) -> bool:
+    user_1: User = User('yona','yona1234','yona',1000, '987654321')
+    user_2: User = User('joan','joan1234','Joan',860, '987766442')
+    self._custumers['user_1'] = user_1.to_dict()
+    self._custumers['user_2'] = user_2.to_dict()
+    return True
+    
+
 # this is an example how work
-def Main():
+def Example1():
   user_1: User = User('yona','yona1234','yona',1000, '987654321')
   print(user_1.to_dict())
   car_1: Vehicle = Vehicle('Renault', 'Symbol','Plate', 900)
@@ -58,5 +80,24 @@ def Main():
     print('You require more credit')
   else: print(f'{user_1._name}, you bought the car {car_1._brand}, {car_1._model}, {car_1._color}, and now is on your collection')
   print(user_1._my_vehicles)
+
+# Example1()
+
+def Main():
+  dealer: Dealership = Dealership()
+  while(True):
+    print('Welcome')
+    try:
+      option: int = int(input('Choose an option: 1 Vehicle available, 2 Contact us, 3 show your vehicles, 4. Exit program\n'))
+    except Exception as e:
+      print('Invalid option, try again. Error:',e)
+      continue
+    if option==4:
+      print('closing program...')
+      break
+    elif option == 1:
+      print('Vehicles avaible:')
+      print(dealer._vehicles_avaibles)
+  pass
 
 Main()
